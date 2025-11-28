@@ -1,0 +1,82 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import siteConfig from '../../config/config.json';
+
+// MDX Components
+import Link from '../mdx/Link.astro';
+import Heading from '../mdx/Heading.astro';
+import Paragraph from '../mdx/Paragraph.astro';
+import Code from '../mdx/Code.astro';
+import Pre from '../mdx/Pre.astro';
+import Blockquote from '../mdx/Blockquote.astro';
+import List from '../mdx/List.astro';
+import ListItem from '../mdx/ListItem.astro';
+import Image from '../mdx/Image.astro';
+import Hr from '../mdx/Hr.astro';
+import Em from '../mdx/Em.astro';
+import Strong from '../mdx/Strong.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+
+const pageTitle = title ? `${title} | ${siteConfig.title}` : siteConfig.title;
+const pageDescription = description || siteConfig.description;
+
+// MDX component mappings
+export const components = {
+  a: Link,
+  h1: (props: any) => Heading({ level: 1, ...props }),
+  h2: (props: any) => Heading({ level: 2, ...props }),
+  h3: (props: any) => Heading({ level: 3, ...props }),
+  h4: (props: any) => Heading({ level: 4, ...props }),
+  h5: (props: any) => Heading({ level: 5, ...props }),
+  h6: (props: any) => Heading({ level: 6, ...props }),
+  p: Paragraph,
+  code: Code,
+  pre: Pre,
+  blockquote: Blockquote,
+  ul: (props: any) => List({ ordered: false, ...props }),
+  ol: (props: any) => List({ ordered: true, ...props }),
+  li: ListItem,
+  img: Image,
+  hr: Hr,
+  em: Em,
+  strong: Strong,
+};
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={pageDescription} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{pageTitle}</title>
+
+    <!-- Theme script - must run before page load to prevent flash -->
+    <script is:inline>
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+    <Header />
+
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>

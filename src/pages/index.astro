@@ -1,0 +1,45 @@
+---
+import MainLayout from '../components/layouts/MainLayout.astro';
+import PageTitle from '../components/layouts/PageTitle.astro';
+import SearchMovies from '../components/SearchMovies';
+import FeaturedMovies from '../components/FeaturedMovies.astro';
+import { getCollection } from 'astro:content';
+import siteConfig from '../config/config.json';
+
+const allMovies = await getCollection('movies');
+const moviesForSearch = allMovies.map((movie) => ({
+  id: movie.id,
+  title: movie.data.title,
+  difficulty: movie.data.difficulty,
+}));
+---
+
+<MainLayout>
+  <PageTitle
+    title="Welcome to Movie Bingo"
+    description={siteConfig.description}
+  />
+
+  <div class="mb-12">
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-lg p-8 mb-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+        Search for a Movie
+      </h2>
+      <SearchMovies movies={moviesForSearch} client:load />
+    </div>
+
+    <div class="text-center">
+      <p class="text-gray-600 dark:text-gray-400 mb-4">
+        Don't see your movie? Create your own custom bingo card!
+      </p>
+      <a
+        href="/custom"
+        class="inline-block bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors"
+      >
+        Create Custom Card
+      </a>
+    </div>
+  </div>
+
+  <FeaturedMovies />
+</MainLayout>

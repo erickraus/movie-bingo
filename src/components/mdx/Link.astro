@@ -1,0 +1,25 @@
+---
+interface Props {
+  href?: string;
+  [key: string]: any;
+}
+
+const { href = '#', ...props } = Astro.props;
+
+// Determine if link is external
+const isExternal = href.startsWith('http://') || href.startsWith('https://') || href.startsWith('//');
+
+// Apply different styles based on link type
+const linkClasses = isExternal
+  ? 'text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1'
+  : 'text-blue-700 dark:text-blue-300 hover:underline font-medium';
+
+const externalProps = isExternal
+  ? { target: '_blank', rel: 'noopener noreferrer' }
+  : {};
+---
+
+<a href={href} class={linkClasses} {...externalProps} {...props}>
+  <slot />
+  {isExternal && <span class="text-xs">↗</span>}
+</a>

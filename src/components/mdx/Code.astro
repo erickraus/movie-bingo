@@ -1,0 +1,10 @@
+---
+const { ...props } = Astro.props;
+---
+
+<code
+  class="bg-gray-100 dark:bg-gray-800 text-red-600 dark:text-red-400 px-1.5 py-0.5 rounded text-sm font-mono"
+  {...props}
+>
+  <slot />
+</code>

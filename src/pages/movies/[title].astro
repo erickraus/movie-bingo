@@ -1,0 +1,44 @@
+---
+import MainLayout from '../../components/layouts/MainLayout.astro';
+import PageTitle from '../../components/layouts/PageTitle.astro';
+import BingoCardGenerator from '../../components/BingoCardGenerator';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const movies = await getCollection('movies');
+  return movies.map((movie) => ({
+    params: { title: movie.id },
+    props: { movie },
+  }));
+}
+
+const { movie } = Astro.props;
+const { title, difficulty, keywords } = movie.data;
+---
+
+<MainLayout title={title}>
+  <div class="mb-8 print:hidden">
+    <a
+      href="/movies"
+      class="inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:underline mb-4"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back to all movies
+    </a>
+
+    <PageTitle title={title} />
+
+    <div class="flex items-center gap-4 mb-6">
+      <span class="px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 capitalize font-semibold">
+        {difficulty}
+      </span>
+      <span class="text-gray-600 dark:text-gray-400">
+        {keywords.length} keywords available
+      </span>
+    </div>
+  </div>
+
+  <BingoCardGenerator title={title} keywords={keywords} client:load />
+</MainLayout>

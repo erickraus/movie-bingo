@@ -1,0 +1,60 @@
+---
+import MainLayout from '../components/layouts/MainLayout.astro';
+import PageTitle from '../components/layouts/PageTitle.astro';
+import siteConfig from '../config/config.json';
+---
+
+<MainLayout title="About">
+  <PageTitle title="About Movie Bingo" />
+
+  <div class="prose dark:prose-invert max-w-none">
+    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">What is Movie Bingo?</h2>
+
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        {siteConfig.description}
+      </p>
+
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        Movie Bingo transforms your movie watching experience into an interactive game. Whether you're hosting a movie night with friends or looking for a fun family activity, our bingo cards add an extra layer of excitement to any film.
+      </p>
+
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 mt-6">How It Works</h3>
+      <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+        <li>Search for your movie from our collection or create a custom card</li>
+        <li>Generate and print bingo cards for all your guests</li>
+        <li>Watch the movie and mark off squares when events happen</li>
+        <li>First person to get five in a row wins!</li>
+      </ol>
+
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 mt-6">Features</h3>
+      <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300 mb-4">
+        <li>Pre-made bingo cards for popular movies</li>
+        <li>Create custom cards for any movie</li>
+        <li>Generate multiple unique cards for group play</li>
+        <li>Print-friendly layouts</li>
+        <li>Dark mode support</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3 mt-6">Get Started</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-4">
+        Ready to make your next movie night more exciting? Browse our collection of featured movies or create your own custom bingo card to get started!
+      </p>
+
+      <div class="flex gap-4 mt-6">
+        <a
+          href="/"
+          class="inline-block bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+        >
+          Browse Movies
+        </a>
+        <a
+          href="/custom"
+          class="inline-block bg-gray-600 hover:bg-gray-700 dark:bg-gray-500 dark:hover:bg-gray-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
+        >
+          Create Custom Card
+        </a>
+      </div>
+    </div>
+  </div>
+</MainLayout>

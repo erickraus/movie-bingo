@@ -1,0 +1,24 @@
+---
+import MainLayout from '../../components/layouts/MainLayout.astro';
+import PageTitle from '../../components/layouts/PageTitle.astro';
+import MoviesTable from '../../components/MoviesTable';
+import { getCollection } from 'astro:content';
+
+const allMovies = await getCollection('movies');
+
+const moviesData = allMovies.map((movie) => ({
+  id: movie.id,
+  title: movie.data.title,
+  difficulty: movie.data.difficulty,
+  keywordCount: movie.data.keywords.length,
+}));
+---
+
+<MainLayout title="All Movies">
+  <PageTitle
+    title="Browse All Movies"
+    description="Explore our collection of movie bingo cards"
+  />
+
+  <MoviesTable movies={moviesData} client:load />
+</MainLayout>

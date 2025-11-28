@@ -1,0 +1,14 @@
+---
+import MainLayout from '../components/layouts/MainLayout.astro';
+import PageTitle from '../components/layouts/PageTitle.astro';
+import BingoCardGenerator from '../components/BingoCardGenerator';
+---
+
+<MainLayout title="Create Custom Bingo Card">
+  <PageTitle
+    title="Create Custom Bingo Card"
+    description="Design your own movie bingo card with custom keywords"
+  />
+
+  <BingoCardGenerator client:load />
+</MainLayout>
