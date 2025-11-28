@@ -1,6 +1,7 @@
 ---
 import menuConfig from '../../config/menu.json';
 import siteConfig from '../../config/config.json';
+import FooterLinks from '../FooterLinks';
 
 const currentYear = new Date().getFullYear();
 ---
@@ -16,16 +17,7 @@ const currentYear = new Date().getFullYear();
       </div>
 
       <!-- Footer Links -->
-      <div class="flex space-x-6">
-        {menuConfig.footer.map((item) => (
-          <a
-            href={item.href}
-            class="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 text-sm transition-colors"
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
+      <FooterLinks client:load links={menuConfig.footer} />
     </div>
   </div>
 </footer>

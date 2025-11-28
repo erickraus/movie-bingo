@@ -198,7 +198,7 @@ export default function BingoCardGenerator({
               onClick={handlePrint}
               className="bg-green-600 hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors"
             >
-              Print Cards
+              Print Cards (desktop)
             </button>
           </div>
 

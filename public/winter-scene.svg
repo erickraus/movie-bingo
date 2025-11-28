@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- Subtle gradient for sky -->
+    <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#f0f8ff;stop-opacity:0.2" />
+    </linearGradient>
+
+    <!-- Snow ground gradient -->
+    <linearGradient id="snowGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#f5f5f5;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="1920" height="1080" fill="url(#skyGradient)"/>
+
+  <!-- Snowy hills in background -->
+  <ellipse cx="960" cy="850" rx="1000" ry="300" fill="url(#snowGradient)"/>
+  <ellipse cx="400" cy="900" rx="500" ry="200" fill="url(#snowGradient)"/>
+  <ellipse cx="1500" cy="920" rx="600" ry="180" fill="url(#snowGradient)"/>
+
+  <!-- Christmas Tree -->
+  <g opacity="0.25" transform="translate(740, 650) scale(2) translate(-740, -650)">
+    <!-- Tree layers (bottom to top) -->
+    <polygon points="740,640 640,710 840,710" fill="#4d7c34"/>
+    <polygon points="740,610 650,680 830,680" fill="#3d6b25"/>
+    <polygon points="740,580 660,650 820,650" fill="#2d5016"/>
+
+    <!-- Tree trunk -->
+    <rect x="720" y="710" width="40" height="80" fill="#8B7355" rx="5"/>
+
+    <!-- Tree star -->
+    <polygon points="740,530 745,550 765,550 750,560 755,580 740,570 725,580 730,560 715,550 735,550" fill="#f4d03f" opacity="0.6"/>
+
+    <!-- Simple ornaments -->
+    <circle cx="700" cy="640" r="5" fill="#c0392b" opacity="0.5"/>
+    <circle cx="780" cy="650" r="5" fill="#e74c3c" opacity="0.5"/>
+    <circle cx="720" cy="680" r="5" fill="#3498db" opacity="0.5"/>
+    <circle cx="760" cy="670" r="5" fill="#9b59b6" opacity="0.5"/>
+  </g>
+
+  <!-- Snowman -->
+  <g opacity="0.25" transform="translate(1200, 570) scale(2) translate(-1200, -570)">
+    <!-- Bottom snowball -->
+    <circle cx="1200" cy="640" r="55" fill="#ffffff" opacity="0.8"/>
+    <circle cx="1200" cy="640" r="53" fill="#f8f9fa" opacity="0.6"/>
+
+    <!-- Middle snowball -->
+    <circle cx="1200" cy="560" r="40" fill="#ffffff" opacity="0.8"/>
+    <circle cx="1200" cy="560" r="38" fill="#f8f9fa" opacity="0.6"/>
+
+    <!-- Head -->
+    <circle cx="1200" cy="500" r="30" fill="#ffffff" opacity="0.8"/>
+    <circle cx="1200" cy="500" r="28" fill="#f8f9fa" opacity="0.6"/>
+
+    <!-- Eyes -->
+    <circle cx="1192" cy="495" r="3" fill="#2c3e50"/>
+    <circle cx="1208" cy="495" r="3" fill="#2c3e50"/>
+
+    <!-- Carrot nose -->
+    <polygon points="1200,500 1220,503 1200,506" fill="#e67e22" opacity="0.7"/>
+
+    <!-- Smile -->
+    <path d="M 1190 510 Q 1200 515 1210 510" stroke="#2c3e50" stroke-width="2" fill="none" opacity="0.6"/>
+
+    <!-- Buttons -->
+    <circle cx="1200" cy="550" r="3" fill="#2c3e50" opacity="0.5"/>
+    <circle cx="1200" cy="565" r="3" fill="#2c3e50" opacity="0.5"/>
+    <circle cx="1200" cy="580" r="3" fill="#2c3e50" opacity="0.5"/>
+
+    <!-- Hat -->
+    <rect x="1175" y="475" width="50" height="8" fill="#2c3e50" opacity="0.6"/>
+    <rect x="1185" y="455" width="30" height="20" fill="#2c3e50" opacity="0.6"/>
+
+    <!-- Scarf -->
+    <ellipse cx="1200" cy="525" rx="35" ry="8" fill="#e74c3c" opacity="0.5"/>
+    <rect x="1210" y="520" width="12" height="35" fill="#e74c3c" opacity="0.5" rx="2"/>
+  </g>
+
+  <!-- Falling snowflakes -->
+  <g opacity="0.15">
+    <circle cx="300" cy="150" r="3" fill="#ffffff"/>
+    <circle cx="500" cy="280" r="2" fill="#ffffff"/>
+    <circle cx="800" cy="200" r="2.5" fill="#ffffff"/>
+    <circle cx="1100" cy="320" r="2" fill="#ffffff"/>
+    <circle cx="1400" cy="180" r="3" fill="#ffffff"/>
+    <circle cx="1600" cy="250" r="2" fill="#ffffff"/>
+    <circle cx="450" cy="400" r="2.5" fill="#ffffff"/>
+    <circle cx="950" cy="350" r="2" fill="#ffffff"/>
+    <circle cx="1300" cy="420" r="2.5" fill="#ffffff"/>
+    <circle cx="650" cy="180" r="2" fill="#ffffff"/>
+    <circle cx="1050" cy="220" r="3" fill="#ffffff"/>
+    <circle cx="1500" cy="380" r="2" fill="#ffffff"/>
+  </g>
+
+  <!-- Additional subtle snow dots -->
+  <g opacity="0.1">
+    <circle cx="200" cy="300" r="1.5" fill="#ffffff"/>
+    <circle cx="400" cy="450" r="1.5" fill="#ffffff"/>
+    <circle cx="600" cy="250" r="1.5" fill="#ffffff"/>
+    <circle cx="900" cy="400" r="1.5" fill="#ffffff"/>
+    <circle cx="1200" cy="200" r="1.5" fill="#ffffff"/>
+    <circle cx="1450" cy="320" r="1.5" fill="#ffffff"/>
+    <circle cx="1700" cy="280" r="1.5" fill="#ffffff"/>
+    <circle cx="350" cy="180" r="1.5" fill="#ffffff"/>
+    <circle cx="750" cy="340" r="1.5" fill="#ffffff"/>
+    <circle cx="1150" cy="380" r="1.5" fill="#ffffff"/>
+  </g>
+</svg>

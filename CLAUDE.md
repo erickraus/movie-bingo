@@ -68,6 +68,7 @@ src/
 ### Content Collections
 
 Movies are stored as YAML files in `src/content/movies/`. Each movie has:
+
 - `title`: string (required)
 - `difficulty`: 'easy' | 'normal' | 'hard' (required)
 - `keywords`: array of strings (required, max 16 chars each)
@@ -78,11 +79,13 @@ Example: `src/content/movies/the-wizard-of-oz.yaml`
 ### Component Approach
 
 **Astro Components** (.astro files):
+
 - Used for static/server-side content
 - Layouts, page templates, MDX components
 - Featured movies, page titles, etc.
 
 **React Components** (.tsx files):
+
 - Used only where client-side interactivity is required
 - BingoCardGenerator (form state, card generation)
 - SearchMovies (live search filtering)
@@ -100,6 +103,7 @@ All React components use `client:load` directive in Astro files.
 ### Bingo Card Generator Logic
 
 The BingoCardGenerator component:
+
 1. Accepts optional props (title, keywords) for pre-configured movies
 2. Validates inputs (title max 125 chars, keywords max 16 chars)
 3. Shuffles keywords and distributes across N cards (1-16)
@@ -118,3 +122,5 @@ The BingoCardGenerator component:
 3. **Accessibility**: Proper semantic HTML, ARIA labels, keyboard navigation
 4. **Print support**: Cards optimized for printing with clean layouts
 5. **Dark mode**: Full theme support with localStorage persistence
+
+- When asked to create keywords: always mix them up so themy don't occur during a sequential timeline in the movie, use things that occur multiple times in the movie, for example quotes, props, non-main characters, situations, specific locations. Do not use generic things like main characters or primary locations like a city

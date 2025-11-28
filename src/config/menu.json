@@ -21,6 +21,11 @@
     {
       "label": "Terms of Use",
       "href": "/terms"
+    },
+    {
+      "label": "GitHub",
+      "href": "https://github.com/erickraus/movie-bingo",
+      "icon": "github"
     }
   ]
 }
