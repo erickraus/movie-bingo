@@ -19,7 +19,7 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <!-- Navigation Links -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden md:flex items-center space-x-8 print:hidden">
         {menuConfig.header.map((item) => {
           const isActive = currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href));
           return (
@@ -41,7 +41,7 @@ const currentPath = Astro.url.pathname;
       <button
         id="theme-toggle"
         type="button"
-        class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors"
+        class="p-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors print:hidden"
         aria-label="Toggle theme"
       >
         <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
